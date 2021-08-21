@@ -45,7 +45,7 @@ public class VistaSumaProveedor extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setFont(new java.awt.Font("Arial Bold", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Bold", 0, 14));
         jLabel1.setText("Consulta N° 3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -99,7 +99,6 @@ public class VistaSumaProveedor extends javax.swing.JFrame {
             }
         });
     }
-
     
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -111,9 +110,7 @@ public class VistaSumaProveedor extends javax.swing.JFrame {
         JDBCUtilities objConexion= new JDBCUtilities();
         
         try {
-            ResultSet resultado = objConexion.consultarRegistros("SELECT SUM(Cantidad) AS Cantidad " + "FROM Compra " + "WHERE Proveedor = 'Cementos El Dorado';");
-            
-            
+            ResultSet resultado = objConexion.consultarRegistros("SELECT SUM(Cantidad) AS Cantidad " + "FROM Compra " + "WHERE Proveedor = 'Cementos El Dorado';");          
             
             while (resultado.next()) { Object[] datos = {
                 resultado.getString("Cantidad") 
@@ -129,4 +126,3 @@ public class VistaSumaProveedor extends javax.swing.JFrame {
         }
         
     }
-
